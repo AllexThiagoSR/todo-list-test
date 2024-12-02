@@ -1,4 +1,4 @@
-import { Button, Input } from "@nextui-org/react";
+import { Button, Input, Link } from "@nextui-org/react";
 
 export default function LoginForm() {
   return (
@@ -28,6 +28,7 @@ export default function LoginForm() {
         variant="underlined"
       />
       <Button className="w-[70%] border-default-400 hover:border-default-500" variant="bordered" color="default">Login</Button>
+      <Link>Não tem conta? Registre-se</Link>
     </form>
   )
 }
