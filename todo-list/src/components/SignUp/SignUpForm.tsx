@@ -15,6 +15,11 @@ export default function SignUpForm() {
     } else setPasswordsDiff(false)
   }
 
+  const onClickButton = () => {
+    if (passwordsDiff) return
+    if (!formValues.password || !formValues.passwordConfirmation || !formValues.username) return
+  } 
+
   return (
     <form className="flex items-center justify-center flex-col min-w-[400px] px-10 py-32 border border-black rounded-xl gap-6">
       <Input
@@ -62,7 +67,7 @@ export default function SignUpForm() {
         errorMessage={'As senhas não coincidem'}
         onFocusChange={onFocusChange}
       />
-      <Button disabled={passwordsDiff} className="w-[70%]" variant="bordered" color="default">Registre-se</Button>
+      <Button onClick={onClickButton} className="w-[70%] border-default-400 hover:border-default-500" variant="bordered" color="default">Registre-se</Button>
       <Link href="/">Já tem conta? Faça o Login</Link>
     </form>
   )
